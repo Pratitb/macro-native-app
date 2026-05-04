@@ -8,7 +8,7 @@ const RecentGrid = ({ meals, getLoadedMeals }: RecentGridProps) => {
         <View style={styles?.recentWrap}>
             <Text style={global?.head}>recent meals</Text>
             <ScrollView style={styles?.mealsWrap} contentContainerStyle={{ gap: 10, justifyContent: 'space-between' }}>
-                {meals?.slice(0, 3)?.map((mealItem) => <RecentMeal key={mealItem?.id} mealId={mealItem?.id} mealName={mealItem?.mealName} calories={mealItem?.calories} protein={mealItem?.protein} carbs={mealItem?.carbs} fats={mealItem?.fats} getLatestMeals={getLoadedMeals} />)}
+                {meals?.slice(0, 3)?.map((mealItem) => <RecentMeal key={mealItem?.id} mealId={mealItem?.id} mealName={mealItem?.mealName} calories={mealItem?.calories} protein={mealItem?.protein} carbs={mealItem?.carbs} fats={mealItem?.fats} getLatestMeals={getLoadedMeals} deleteBtn />)}
             </ScrollView>
         </View>
     )

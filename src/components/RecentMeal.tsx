@@ -4,7 +4,7 @@ import { RecentMealProps } from "@/utils/types"
 import { Trash } from "lucide-react-native"
 import { StyleSheet, Text, View } from "react-native"
 
-const RecentMeal = ({ mealId, mealName, calories, protein, carbs, fats, getLatestMeals }: RecentMealProps) => {
+const RecentMeal = ({ mealId, mealName, calories, protein, carbs, fats, getLatestMeals, deleteBtn }: RecentMealProps) => {
 
     const handleDeleteMeal = async (mealId?: string) => {
         await deleteMeal?.(mealId)
@@ -21,7 +21,7 @@ const RecentMeal = ({ mealId, mealName, calories, protein, carbs, fats, getLates
                     <Text>{fats}g <Text style={styles?.unit}>F</Text></Text>
                 </View>
             </View>
-            <Trash color={colors?.red} size={20} style={styles?.icon} onPress={() => handleDeleteMeal?.(mealId)} />
+            {deleteBtn ? <Trash color={colors?.red} size={20} style={styles?.icon} onPress={() => handleDeleteMeal?.(mealId)} /> : ''}
         </View>
     )
 }
